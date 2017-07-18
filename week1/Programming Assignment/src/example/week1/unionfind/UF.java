@@ -1,4 +1,4 @@
-package unionfind;
+package example.week1.unionfind;
 
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
@@ -6,7 +6,7 @@ import edu.princeton.cs.algs4.StdOut;
 public class UF {
     private int[] id; // entry id
     private int count; // number of entries
-    
+
     public UF(int N) {
         // initialize entry array id
         this.count = N;
@@ -14,20 +14,20 @@ public class UF {
         for (int i = 0; i < N; i++)
             this.id[i] = i;
     }
-    
+
     public int count() {
         return this.count;
     }
-    
+
     public boolean connected(int p, int q) {
         return false;
         // TODO: finish this implementation
     }
-    
+
     public void union(int p, int q) {
         // TODO: finish this implementation
     }
-    
+
     public static void main(String[] args) {
         int N = StdIn.readInt();
         UF uf = new UF(N);
