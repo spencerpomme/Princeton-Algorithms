@@ -5,6 +5,7 @@ import edu.princeton.cs.algs4.StdOut;
 
 public class UF {
     private int[] id; // entry id
+    private int[] sz; // size of the component
     private int count; // number of entries
 
     public UF(int N) {
@@ -18,14 +19,29 @@ public class UF {
     public int count() {
         return this.count;
     }
+    
+    private int root(int i) {
+        while (i != this.id[i])
+            i = this.id[i];
+        return i;
+    }
 
     public boolean connected(int p, int q) {
-        return false;
-        // TODO: finish this implementation
+        return this.root(p) == this.root(q);
     }
 
     public void union(int p, int q) {
-        // TODO: finish this implementation
+        int i = this.root(p);
+        int j = this.root(q);
+        if (i == j)
+            return;
+        if (this.sz[i] < this.sz[j]) {
+            this.id[i] = j;
+            this.sz[j] += this.sz[i];
+        } else {
+            this.id[j] = i;
+            this.sz[i] += this.sz[j];
+        }
     }
 
     public static void main(String[] args) {
