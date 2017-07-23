@@ -12,8 +12,11 @@ public class UF {
         // initialize entry array id
         this.count = N;
         this.id = new int[N];
-        for (int i = 0; i < N; i++)
+        this.sz = new int[N];
+        for (int i = 0; i < N; i++) {
             this.id[i] = i;
+            this.sz[i] = 1;
+        }
     }
 
     public int count() {
@@ -45,6 +48,7 @@ public class UF {
     }
 
     public static void main(String[] args) {
+        System.out.println("Start");
         int N = StdIn.readInt();
         UF uf = new UF(N);
         while (!StdIn.isEmpty()) {
@@ -56,5 +60,6 @@ public class UF {
             StdOut.println(p + " " + q);
         }
         StdOut.println(uf.count() + "components");
+        StdOut.println("End");
     }
 }
