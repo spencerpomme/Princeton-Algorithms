@@ -22,7 +22,7 @@ public class UF {
     public int count() {
         return this.count;
     }
-    
+
     private int root(int i) {
         while (i != this.id[i])
             i = this.id[i];
@@ -58,9 +58,9 @@ public class UF {
             if (uf.connected(p, q))
                 continue;
             uf.union(p, q);
-            StdOut.println(p + " " + q );
+            StdOut.println(p + " " + q);
         }
-        StdOut.println(uf.count() + "components");
+        StdOut.println(uf.count() + "connected components");
         StdOut.println("End");
     }
 }
