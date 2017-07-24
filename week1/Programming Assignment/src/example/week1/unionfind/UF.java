@@ -45,10 +45,11 @@ public class UF {
             this.id[j] = i;
             this.sz[i] += this.sz[j];
         }
+        this.count--;
     }
 
     public static void main(String[] args) {
-        System.out.println("Start");
+        StdOut.println("Start");
         int N = StdIn.readInt();
         UF uf = new UF(N);
         while (!StdIn.isEmpty()) {
@@ -57,7 +58,7 @@ public class UF {
             if (uf.connected(p, q))
                 continue;
             uf.union(p, q);
-            StdOut.println(p + " " + q);
+            StdOut.println(p + " " + q );
         }
         StdOut.println(uf.count() + "components");
         StdOut.println("End");
